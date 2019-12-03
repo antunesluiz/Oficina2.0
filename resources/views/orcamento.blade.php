@@ -24,7 +24,7 @@
           </li>
         </ul>
         <div class="my-2 my-lg-0 nav-item">
-          <a class="nav-link" href="#">Filtrar Orçamentos</a>
+          <a class="nav-link" href="{{ url('filtro_orcamento') }}">Filtrar Orçamentos</a>
         </div>
       </div>
     </nav>

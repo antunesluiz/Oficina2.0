@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Http\Controllers;
 
 class IndexController extends Controller
 {
@@ -18,6 +19,14 @@ class IndexController extends Controller
 
     public function orcamento() {
         return view('orcamento');
+    }
+
+    public function FiltroOrcamento() {
+        $orcamentoController = new orcamentoController();
+
+        $orcamentos = $orcamentoController->retornaOrcamentos();
+
+        return view('buscaOrcamentos')->with(compact('orcamentos'));
     }
     /**
      * Show the form for creating a new resource.

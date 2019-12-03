@@ -20,5 +20,8 @@ Route::get('/index', function() {
 });
 
 Route::get('/orcamento', 'IndexController@orcamento');
+Route::get('/filtro_orcamento', 'IndexController@filtroOrcamento');
+
 Route::post('/formulario', 'OrcamentoController@index')->name('formulario.send');
 Route::post('/formularioValida', 'OrcamentoController@inserirDados')->name('formularioValida.send');
+Route::post('/filtroOrcamento', 'OrcamentoController@filtrarDados')->name('filtroOrcamento.send');

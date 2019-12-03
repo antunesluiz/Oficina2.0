@@ -24,7 +24,7 @@
           </li>
         </ul>
         <div class="my-2 my-lg-0 nav-item">
-          <a class="nav-link" href="#">Filtrar Orçamentos</a>
+          <a class="nav-link" href="{{ url('filtro_orcamento') }}">Filtrar Orçamentos</a>
         </div>
       </div>
     </nav>
@@ -39,6 +39,7 @@
       <div class="jumbotron bg-light col-lg-5">
         <div class="container text-center col-lg-8">
           <a href="{{ url('orcamento') }}" class="btn btn-block btn-outline-primary my-3">Fazer Orçamento</a>
+          <a href="{{ url('filtro_orcamento') }}" class="btn btn-block btn-outline-primary my-3">Buscar Orçamentos</a>
         </div>
       </div>
     </div>

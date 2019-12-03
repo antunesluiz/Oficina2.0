@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
 
 use app\Orcamento;
+use app\Http\Controllers;
 
 class OrcamentoController extends Controller
 {
@@ -33,8 +34,8 @@ class OrcamentoController extends Controller
     public function inserirDados(Request $request) {
         $orcamento = $request->session()->get('orcamento');
 
-
-        DB::insert('insert into orcamento (id, cliente, vendedor, data, hora, descricao, valor) values(?, ?, ?, ?, ?, ?, ?)', [
+        if ($request->input("finalizarOrcamento") == "Finalizar Orçamento") {
+            DB::insert('insert into orcamento (id, cliente, vendedor, data, hora, descricao, valor) values(?, ?, ?, ?, ?, ?, ?)', [
                 null,
                 $orcamento['Cliente'],
                 $orcamento['Vendedor'],
@@ -42,9 +43,32 @@ class OrcamentoController extends Controller
                 $orcamento['Hora'],
                 $orcamento['Descricao'],
                 $orcamento['Valor']
-        ]);
+            ]);
+        }
 
         return view('index');
+    }
+
+    public function retornaOrcamentos() {
+        $orcamentos = DB::select('select * from orcamento order by id desc');
+
+        return $orcamentos;
+    }
+
+    public function filtrarDados(Request $request) {
+        if ($request->input("select") == "1") {
+            $cliente = $request->input('categoria');
+            $orcamentos = DB::select("select * from orcamento where cliente = '$cliente' order by id desc");  
+        } elseif ($request->input("select") == "2") {
+            $vendedor = $request->input('categoria');
+            $orcamentos = DB::select("select * from orcamento where vendedor = '$vendedor' order by id desc"); 
+        } else {
+            $orcamentos = $this->retornaOrcamentos();
+            
+            return view('buscaOrcamentos')->with(compact('orcamentos'));
+        }     
+
+        return view('buscaOrcamentos')->with(compact('orcamentos'));
     }
 
     /**
@@ -57,13 +81,7 @@ class OrcamentoController extends Controller
         //
     }
 
-    public static function retornaClientes() {
-        $clientes = DB::table('clientes')
-        ->select('nome')
-        ->get();
-
-        return compact('clientes');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
