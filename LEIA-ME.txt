@@ -1,0 +1,5 @@
+Tarefa para avaliação técnica de candidatos ao time de desenvolvimento da empresa "Codificar".
+
+Este projeto tem por objetivo principal criar um breve sistema de CRUD que visa auxiliar a supervisão de pedidos de uma oficina mecânica. Para tal, foi criando um sistema Web com a Framework Laravel com as seguintes ferramentas: Cadastro de orçamento; Filtragem e busca de orçamentos;
+
+Para a construção do sistema foi usado o padrão de projetos "mvc" que separa a aplicação em camadas e que facilita, por exemplo, a manuntenção do sistema e a depuração individual dos modulos. A aplicação foi desenvolvida com a linguagem de programação PHP com o auxílio do framework Laravel. Para o desenvolvimento da base de dados foi o usado um banco de dados relacional MySql na plataforma phpMyAdmin situado no localhost.
