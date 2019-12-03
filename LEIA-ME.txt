@@ -3,3 +3,9 @@ Tarefa para avaliação técnica de candidatos ao time de desenvolvimento da emp
 Este projeto tem por objetivo principal criar um breve sistema de CRUD que visa auxiliar a supervisão de pedidos de uma oficina mecânica. Para tal, foi criando um sistema Web com a Framework Laravel com as seguintes ferramentas: Cadastro de orçamento; Filtragem e busca de orçamentos;
 
 Para a construção do sistema foi usado o padrão de projetos "mvc" que separa a aplicação em camadas e que facilita, por exemplo, a manuntenção do sistema e a depuração individual dos modulos. A aplicação foi desenvolvida com a linguagem de programação PHP com o auxílio do framework Laravel. Para o desenvolvimento da base de dados foi o usado um banco de dados relacional MySql na plataforma phpMyAdmin situado no localhost.
+
+Para melhor visualização do projeto, ele encontra-se hospedado em um host gratuito e pode ser acessado no link: https://oficinaluizantunes.000webhostapp.com/index
+
+Para executar o projeto no localhost foi utilizado o xampp. Logo, para rodar o mesmo é necessário colocar o projeto na pasta do xampp/htdocs e executar o arquivo sql (que encontra-se na raiz do projeto) no banco de dados do phpMyAdmin situado no localhost. Informações sobre o banco de dados encontram-se-no arquivo .env na raiz do projeto e por padrão, o DB_NAME, o DB_USER e o DB_PASSWORD já estão configurados.
+
+De mais a mais, entre com a url da página 'index' no browser de sua preferência. "Localhost/oficina2.0/public/" caso configure o projeto para rodar no localhost ou use o projeto que já está hospedado e configurado no 000webhost.
